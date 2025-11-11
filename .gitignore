@@ -48,8 +48,6 @@ pip-log.txt
 *.sln
 *.sw?
 
-# Claude Code local settings
-.claude/settings.local.json
 
 # OS
 .DS_Store
