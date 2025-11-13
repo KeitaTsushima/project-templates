@@ -28,41 +28,89 @@ Use `docs/plans/PLAN-template.md` as starting point. See `docs/plans/PLAN-guide.
 #### Phase 2: Skeleton Implementation
 
 **Step 1: Structure Only** (20-30 lines max)
-- Empty functions/classes
-- Type definitions
-- Interface declarations
+- Write ONLY empty functions/classes, type definitions, and interface declarations
 - NO implementation yet
+- **IMMEDIATELY STOP after writing structure**
+- Present what you wrote to the user
 
-**Step 2: Q&A Pause**
-- Wait for questions and clarifications
-- Explain architecture decisions
+**Step 2: Q&A Pause** (MANDATORY - CANNOT SKIP)
+- Explain the structure and architecture decisions you made
+- Wait for user questions and clarifications
 - Make adjustments based on feedback
+- **Wait for EXPLICIT user confirmation before proceeding to Step 3**
 
 **Step 3: Review & Confirm**
 ```bash
 git add .
 coderabbit review --prompt-only --type uncommitted
 ```
-Fix any issues, then get confirmation to proceed.
+- Fix any issues found by CodeRabbit
+- **Wait for EXPLICIT user confirmation before proceeding to Phase 3**
 
 #### Phase 3: Incremental Implementation
 
 **For each function/component:**
 
 1. **Implement ONE function** (20-30 lines max)
-2. **Mandatory Q&A pause** - Explain what you wrote, answer questions
-3. **Run CodeRabbit review** (same command as Phase 2)
+   - **IMMEDIATELY STOP after implementing the function**
+   - Present the implementation to the user
+
+2. **Mandatory Q&A pause** (CANNOT SKIP)
+   - Explain what you implemented and why
+   - Answer user questions
+   - **Wait for EXPLICIT user confirmation before proceeding**
+
+3. **Run CodeRabbit review**
+   ```bash
+   git add .
+   coderabbit review --prompt-only --type uncommitted
+   ```
+
 4. **Fix issues** found by CodeRabbit
-5. **Get confirmation** before next function
+   - **STOP after fixes and present the changes**
+
+5. **Write unit test** (Skip only if trivial getter/setter)
+   - Create test file (e.g., `function_name.test.ts` or `test_function_name.py`)
+   - Write test cases:
+     - Happy path (normal input)
+     - Edge cases (empty, null, invalid input)
+     - Error handling (if applicable)
+   - Run tests to ensure they pass
+   - **STOP and present test results**
+
+6. **Wait for EXPLICIT confirmation** before implementing next function
 
 #### Phase 4: Integration & Testing
 
 After all functions implemented:
-- Integration testing
-- Update PLAN.md with "Issues Encountered and Resolved"
-- Document learnings for future reference
-- Final CodeRabbit review before commit
-- Commit with descriptive message
+- **Integration testing**
+  - Run build: `npm run build` / `pytest` (verify no errors)
+  - Run dev server: `npm run dev` (manual testing if applicable)
+  - Test actual functionality works end-to-end
+- **Final CodeRabbit review**
+  - Run `git add .` and `coderabbit review --prompt-only --type uncommitted`
+  - Fix any issues found by CodeRabbit
+- **Documentation update (BEFORE commit)**
+  - Update `docs/plans/PLAN-*.md` with "Issues Encountered and Resolved"
+  - Update `docs/daily-logs/YYYY-MM-DD.md` with implementation details
+  - Document learnings for future reference
+- **Single commit with everything**
+  - Stage all changes: implementation + PLAN + daily log
+  - Commit with descriptive message that mentions documentation updates
+  - Example:
+    ```bash
+    git add src/feature.ts docs/plans/PLAN-feature.md docs/daily-logs/2025-11-13.md
+    git commit -m "feat: Add new feature implementation
+
+    - Add core functionality with type definitions
+    - Fix edge cases found during testing
+    - Update daily log with implementation details
+    - Update PLAN with Issues and resolutions
+
+    🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+    Co-Authored-By: Claude <noreply@anthropic.com>"
+    ```
 
 ### Key Principles
 
