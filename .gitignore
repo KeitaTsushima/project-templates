@@ -71,5 +71,8 @@ ENV/
 *.swp
 *~
 
+# Communication file for Claude Code
+com.txt
+
 # Output files
 output/
