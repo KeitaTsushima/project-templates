@@ -14,3 +14,11 @@ reviews:
 
   # Post review status as a check
   review_status: true
+
+# Knowledge base: Project-specific guidelines
+knowledge_base:
+  code_guidelines:
+    enabled: true
+    filePatterns:
+      - "docs/development/quality-guide.md"
+      - "docs/development/testing-guide.md"
