@@ -24,7 +24,7 @@
 
 #### Phase 1: Planning (Create PLAN.md)
 
-Use `docs/plans/PLAN-template.md` as starting point. See `docs/plans/PLAN-guide.md` for detailed guidance.
+Create `docs/plans/PLAN-{NN}-[feature-name].md` using `PLAN-template.md` as starting point (NN = sequential number: 01, 02...). See `docs/plans/PLAN-guide.md` for detailed guidance.
 
 #### Phase 2: Skeleton Implementation
 

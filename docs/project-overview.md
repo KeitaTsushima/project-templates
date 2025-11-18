@@ -33,13 +33,13 @@
 - [Other services]
 
 ## Architecture Overview
-[Brief description or link to architecture.md]
+[Brief description of system architecture]
 
 ## Project Status
 [Current phase, what's working, what's in progress]
 
 ## Getting Started
-See [setup-guide.md](./setup-guide.md) for environment setup instructions.
+[Environment setup instructions]
 
 ## Contact
 - Owner: [Name]
