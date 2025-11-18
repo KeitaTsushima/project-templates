@@ -3,8 +3,9 @@
 ## Important Rules
 
 1. **Check current status before working**
-   - Check progress in `docs/daily-logs/` (most recent file)
+   - Read `docs/project-overview.md` to understand project purpose and goals
    - Reference current PLAN in `docs/plans/` for implementation steps
+   - Check progress in `docs/daily-logs/` (most recent file)
 
 2. **Never work directly on main branch**
    - Create feature branches for all work
@@ -12,10 +13,10 @@
 3. **Always confirm before deletion**
 
 4. **Record session log regularly**
-   - Update `docs/daily-logs/YYYY-MM-DD.md` throughout the session
+   - Create/update `docs/daily-logs/YYYY-MM-DD.md` throughout the session (see `docs/daily-logs/template.md` for format)
    - Good timing: after completing a feature, solving a problem, or making a key decision
 
-## Code Implementation Procedure (MOST IMPORTANT)
+## Code Implementation Procedure
 
 **This workflow ensures effective collaboration, even for beginners.**
 
@@ -52,6 +53,7 @@ coderabbit review --prompt-only --type uncommitted
 **For each function/component:**
 
 1. **Implement ONE function** (20-30 lines max)
+   - **IMPORTANT**: Follow `docs/development/quality-guide.md` for code quality standards
    - **IMMEDIATELY STOP after implementing the function**
    - Present the implementation to the user
 
@@ -65,6 +67,7 @@ coderabbit review --prompt-only --type uncommitted
    git add .
    coderabbit review --prompt-only --type uncommitted
    ```
+   See `docs/development/coderabbit-workflow.md` for detailed CodeRabbit usage.
 
 4. **Create task list from CodeRabbit findings** (CRITICAL - prevents forgetting issues)
    - Use TodoWrite tool to record ALL issues found by CodeRabbit
@@ -88,14 +91,16 @@ coderabbit review --prompt-only --type uncommitted
 
 6. **Re-run CodeRabbit to verify** (if significant changes were made)
    - Ensure all issues are resolved
-   - If new issues appear, go back to step 4
+   - If new issues appear, create a new task list (step 4) and repeat the process
 
 7. **Write unit test** (Skip only if trivial getter/setter)
+   - **IMPORTANT**: Follow `docs/development/testing-guide.md` for test strategy and patterns
    - Create test file (e.g., `function_name.test.ts` or `test_function_name.py`)
    - Write test cases:
      - Happy path (normal input)
      - Edge cases (empty, null, invalid input)
      - Error handling (if applicable)
+   - Use appropriate test doubles (Mock, Stub, Fake) per testing-guide.md
    - Run tests to ensure they pass
    - **STOP and present test results**
 
@@ -148,17 +153,7 @@ After all functions implemented:
 
 ## Documentation Structure
 
-This project follows a standardized documentation structure:
-
-### Required Documentation
-
-**docs/project-overview.md** - High-level project summary (start here)
-
-**docs/plans/** - Create PLAN.md before major features (see `docs/plans/PLAN-template.md` and `PLAN-guide.md`)
-
-**docs/daily-logs/** - Record every development session (see `docs/daily-logs/template.md` for format)
-
-See `docs/README.md` for complete documentation structure.
+This project follows a standardized documentation structure. See `docs/README.md` for complete details.
 
 ## Code Quality Standards
 
