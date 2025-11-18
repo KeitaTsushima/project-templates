@@ -149,6 +149,7 @@ function strips a fixed set of characters which is insecure...
 
 ## Related Files
 
-- **Complete Development Workflow**: `CLAUDE.md` "Code Implementation Procedure"
-- **Setup Guide**: `.claude/coderabbit-setup.md`
-- **Configuration**: `.coderabbit.yaml`
+- **Complete Development Workflow**: `../../CLAUDE.md` "Code Implementation Procedure"
+- **Quality Standards**: [Quality Guide](./quality-guide.md)
+- **Testing Strategy**: [Testing Guide](./testing-guide.md)
+- **Configuration**: `../../.coderabbit.yaml`
