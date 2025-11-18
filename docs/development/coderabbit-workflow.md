@@ -24,9 +24,13 @@ coderabbit review --plain
 coderabbit review --prompt-only --base develop
 ```
 
-### Manual PR Review Trigger
+### PR Reviews (Automatic)
 
-If auto-review doesn't trigger, comment on the PR:
+CodeRabbit automatically reviews all pull requests when:
+1. CodeRabbit GitHub App is installed on the repository (one-time setup)
+2. `.coderabbit.yaml` is configured with `auto_review: enabled: true`
+
+If auto-review doesn't trigger, manually trigger with:
 ```
 @coderabbitai review
 ```
