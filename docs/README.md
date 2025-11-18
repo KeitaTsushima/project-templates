@@ -6,16 +6,11 @@
 - [Plans](./plans/) - Implementation plans and design documents (create before features)
 - [Daily Logs](./daily-logs/) - Development journal and session records (update regularly)
 
-## Optional Documentation
+## Development Guides
 
-Create these files when they become necessary:
-
-- `architecture.md` - Architecture decisions and technical design
-- `setup-guide.md` - Environment setup and installation instructions
-- `testing-guide.md` - Testing strategy and how to run tests
-- `quality-rules.md` - Code quality standards and best practices
-- `security.md` - Security guidelines and practices
-- `api-documentation.md` - API specifications (if applicable)
+- [CodeRabbit Workflow](./development/coderabbit-workflow.md) - How to use CodeRabbit for code reviews
+- [Quality Guide](./development/quality-guide.md) - Code quality standards and best practices
+- [Testing Guide](./development/testing-guide.md) - Testing strategy and patterns
 
 ## How to Use This Documentation
 
@@ -25,7 +20,7 @@ Create these files when they become necessary:
 3. Update daily log at end of each session
 
 ### Starting New Features
-1. Create `plans/PLAN-[feature-name].md` using the template
+1. Create `plans/PLAN-{NN}-[feature-name].md` using the template (NN = sequential number: 01, 02, ...)
 2. Get plan reviewed before implementation
 3. Reference plan during implementation
 
