@@ -1,4 +1,4 @@
-# Project Template for Claude Code
+# Project Template
 
 This is a standardized project template optimized for development with Claude Code and CodeRabbit.
 
@@ -20,9 +20,9 @@ This is a standardized project template optimized for development with Claude Co
    ```
 
 3. Customize project-specific files:
+   - Update `README.md` (replace this template guide with project description)
    - Update `CLAUDE.md` (project name, specific rules)
    - Update `docs/project-overview.md` (purpose, tech stack)
-   - Remove this README.md and create project-specific one
 
 4. Set up GitHub repository (if using GitHub):
    ```bash
@@ -42,32 +42,20 @@ This is a standardized project template optimized for development with Claude Co
 - `.gitignore` - Standard ignore patterns
 
 ### Documentation Structure
-- `docs/README.md` - Documentation index
-- `docs/project-overview.md` - Project summary template
-- `docs/daily-logs/template.md` - Daily log format
-- `docs/plans/PLAN-template.md` - Planning document template
-
-### Claude Code Guides
-- `.claude/coderabbit-workflow.md` - CodeRabbit workflow guide
+- `docs/` - Complete documentation (see `docs/README.md` for full structure)
+  - Project overview, daily logs, plans
+  - Development guides (CodeRabbit, quality, testing)
 
 ## Development Workflow
 
-1. **Start of each feature**: Create PLAN.md in `docs/plans/`
-2. **During development** (repeat for each function):
-   - Implement 20-30 lines
-   - Q&A with developer (questions, explanations, adjustments)
-   - Run CodeRabbit CLI review
-   - Fix issues found by CodeRabbit
-   - Get confirmation before moving to next chunk
-3. **Before commit**: Final CodeRabbit CLI review
-4. **End of each session**: Update daily log in `docs/daily-logs/`
+This template uses an incremental development approach optimized for Claude Code:
 
-## Key Principles
+- Plan before implementation (`docs/plans/`)
+- Small iterations with frequent reviews (20-30 lines at a time)
+- CodeRabbit review at each step
+- Document progress in daily logs (`docs/daily-logs/`)
 
-- Incremental development (20-30 lines at a time)
-- Frequent CodeRabbit reviews
-- Mandatory Q&A pauses
-- Comprehensive daily logs
+See `CLAUDE.md` for complete workflow details.
 
 ## Requirements
 
@@ -80,5 +68,7 @@ This is a standardized project template optimized for development with Claude Co
 
 See individual documentation files for detailed guides:
 - Development workflow: `CLAUDE.md`
-- CodeRabbit usage: `.claude/coderabbit-workflow.md`
+- CodeRabbit usage: `docs/development/coderabbit-workflow.md`
+- Quality standards: `docs/development/quality-guide.md`
+- Testing guide: `docs/development/testing-guide.md`
 - Documentation structure: `docs/README.md`
