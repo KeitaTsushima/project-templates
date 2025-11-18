@@ -66,10 +66,31 @@ coderabbit review --prompt-only --type uncommitted
    coderabbit review --prompt-only --type uncommitted
    ```
 
-4. **Fix issues** found by CodeRabbit
-   - **STOP after fixes and present the changes**
+4. **Create task list from CodeRabbit findings** (CRITICAL - prevents forgetting issues)
+   - Use TodoWrite tool to record ALL issues found by CodeRabbit
+   - Mark each issue with type (potential_issue, nitpick, etc.)
+   - Example task list:
+     - [pending] Fix memory leak in event handler (potential_issue)
+     - [pending] Add null check for response.data (potential_issue)
+     - [pending] Handle retry on initialization failure (nitpick)
+   - This ensures no issue is forgotten during long Q&A sessions
 
-5. **Write unit test** (Skip only if trivial getter/setter)
+5. **Fix issues one by one**
+   - For each issue in the task list:
+     - Mark issue as in_progress using TodoWrite
+     - Fix ONE issue only
+     - **IMMEDIATELY STOP after the fix**
+     - Explain what you fixed and why
+     - Answer user questions
+     - **Wait for EXPLICIT user confirmation**
+     - Mark issue as completed using TodoWrite
+   - Repeat until all issues are resolved
+
+6. **Re-run CodeRabbit to verify** (if significant changes were made)
+   - Ensure all issues are resolved
+   - If new issues appear, go back to step 4
+
+7. **Write unit test** (Skip only if trivial getter/setter)
    - Create test file (e.g., `function_name.test.ts` or `test_function_name.py`)
    - Write test cases:
      - Happy path (normal input)
@@ -78,7 +99,7 @@ coderabbit review --prompt-only --type uncommitted
    - Run tests to ensure they pass
    - **STOP and present test results**
 
-6. **Wait for EXPLICIT confirmation** before implementing next function
+8. **Wait for EXPLICIT confirmation** before implementing next function
 
 #### Phase 4: Integration & Testing
 
