@@ -1,5 +1,25 @@
 # Claude Code - [Project Name]
 
+## Session Startup Checklist (MUST READ ALOUD)
+
+**At the start of EVERY session, read and confirm the following:**
+
+1. **Current branch check**
+   - Run `git branch` to confirm current branch
+   - If on `main`, create a feature branch before any code changes
+   - Never commit directly to main
+
+2. **Workflow reminder**
+   - Code changes require CodeRabbit CLI review (`coderabbit review --prompt-only --type uncommitted`)
+   - Commits go to feature branch, then PR to main
+   - PR triggers CodeRabbit GitHub review
+   - Q&A pause after each implementation step (CANNOT SKIP)
+
+3. **Confirm with user**
+   - "現在のブランチは [branch name] です。作業を開始してよいですか？"
+
+---
+
 ## Important Rules
 
 1. **Check current status before working**
