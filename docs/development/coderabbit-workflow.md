@@ -43,6 +43,56 @@ coderabbit auth status
 
 ---
 
+## GitHub Branch Protection (Solo Projects)
+
+CodeRabbit PR reviews require branch protection to enforce PR workflow.
+
+### Recommended Settings for Solo Projects
+
+| Setting | Value | Reason |
+|---------|-------|--------|
+| Direct push to main | ❌ Blocked | Force PR workflow for CodeRabbit |
+| Approval required | ✅ 1 person | For external PRs |
+| CodeRabbit pass required | ✅ | Ensure code quality |
+| enforce_admins | ❌ false | Owner can bypass approval (but still sees CodeRabbit) |
+
+### Why This Configuration?
+
+**Problem:** Solo projects face a conflict:
+- Want main push blocked → PR required
+- Want approval required → Can't approve own PRs
+
+**Solution:**
+- Approval required for external contributors
+- Owner bypasses approval (enforce_admins: false)
+- CodeRabbit pass still provides quality gate
+
+**Trade-off:**
+- Owner can push directly to main (must self-enforce PR workflow)
+- External PRs require both approval + CodeRabbit pass
+
+### Setup Commands
+
+```bash
+# Set branch protection
+gh api repos/OWNER/REPO/branches/main/protection -X PUT \
+  --input - <<EOF
+{
+  "required_status_checks": {
+    "strict": false,
+    "contexts": ["CodeRabbit"]
+  },
+  "enforce_admins": false,
+  "required_pull_request_reviews": {
+    "required_approving_review_count": 1
+  },
+  "restrictions": null
+}
+EOF
+```
+
+---
+
 ## Integration with Claude Code
 
 ### Typical Prompts
